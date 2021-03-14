@@ -1,0 +1,70 @@
+<div class="popup-container display-flex-row" 
+    [ngStyle]="{'right': popupVisible ? '0px' : '-300px'}">
+    <div class="popup-title" (click)="popupVisible = !popupVisible">
+        <strong>ten</strong>fold
+    </div>
+    <div class="popup-body">
+        <div class="popup-header">
+            <div class="call-status">
+                <div class="status-icon"> </div>
+                <div> Busy - On Call </div>
+            </div>
+        </div>
+        <div class="operations display-flex-row">
+            <div class="call call-time display-flex-row">
+                <img src="assets/call_end.svg">
+                6:12
+            </div>
+            <div class="call call-number">
+                + 1(232) 334 5594
+            </div>
+            <div class="call call-operations">
+                <img src="assets/hold.svg">
+                <img class="transfer-icon" src="assets/transfer.svg">
+                <img src="assets/home.svg">
+            </div>
+        </div>
+        <div class="user-details">
+            <div class="user-header display-flex-row">
+                <span class="user-name">
+                    <strong>
+                        Peter Simmons
+                    </strong>
+                </span>
+                <div class="contact">
+                    Contact
+                </div>
+            </div>
+            <div class="user-position">
+                <strong>
+                    Director of Sales Support
+                </strong>
+            </div>
+            <div class="user-company">
+                <strong>
+                    Massive Deals Inc.
+                </strong>
+            </div>
+        </div>
+        <div class="tab-section">
+            <mat-tab-group>
+                <mat-tab label="ACTIVITY">
+                    <div class="tab-content">
+                        <app-activity-record *ngFor="let activity of activities" [record]=activity>
+                        </app-activity-record>
+                    </div>
+                </mat-tab>
+                <mat-tab label="INFO">
+                    <div class="tab-content">
+                        INFO TAB CONTENT
+                    </div>
+                </mat-tab>
+                <mat-tab label="ACTIONS">
+                    <div class="tab-content">
+                        ACTIONS TAB CONTENT
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="activity-record">
+    <div class="activity-icon">
+        <div class="activity-direction">
+            <img class="activity-direction-icon"
+                [ngClass]="{'outgoing-call-icon': record.activityDirection === activityDirection.OUTGOING}"
+                src="assets/arrow.svg">
+        </div>
+        <img class="activity-icon-type"
+            [src]="record.type === activityType.MAIL ? 'assets/email.svg' : 'assets/mobile.svg'">
+    </div>
+    <div class="activity-details">
+        <span class="activity-title">
+            <strong>{{record.title}}</strong>
+        </span>
+        <span class="activity-contact">
+            <strong>
+                {{record.from ? 'From: ' : 'To: '}}
+            </strong>
+            {{record.from ? record.from : record.to}}
+        </span>
+        <div class="activity-user-date">
+            <img class="user-icon" src="assets/person.svg">
+            <span>
+                {{record.currentUser}} {{record.date}}
+            </span>
+        </div>
+    </div>
+</div>
